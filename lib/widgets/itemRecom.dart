@@ -43,10 +43,10 @@ class ItemRecomWid extends StatelessWidget {
                     children: [
                       Text(
                         categ,
-                        style: TextStyle(color: ColorsH.text3),
+                        style: TextStyle(fontSize: 10, color: ColorsH.text3),
                       ),
-                      SizedBox(
-                        width: 40,
+                      Expanded(
+                        child: Container(),
                       ),
                       Icon(
                         icon,
@@ -62,7 +62,7 @@ class ItemRecomWid extends StatelessWidget {
                   width: 120,
                   child: Text(
                     title,
-                    style: TextStyle(fontSize: 12, color: ColorsH.text),
+                    style: TextStyle(fontSize: 10, color: ColorsH.text),
                   ),
                 ),
                 Container(
@@ -87,8 +87,8 @@ class ItemRecomWid extends StatelessWidget {
                           child: Container(),
                         ),
                         Container(
-                          height: 22,
-                          width: 22,
+                          height: 20,
+                          width: 20,
                           decoration: BoxDecoration(
                             color: ColorsH.white,
                             borderRadius: BorderRadius.circular(100),
@@ -111,7 +111,12 @@ class ItemRecomWid extends StatelessWidget {
               ],
             ),
           ),
-          Image.asset(asset, fit: BoxFit.fill, height: 160,width: 130,),
+          Image.asset(
+            asset,
+            fit: BoxFit.fill,
+            height: 160,
+            width: 120,
+          ),
         ],
       ),
     );

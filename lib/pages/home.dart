@@ -10,75 +10,78 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
-  List<ItemCategsWid> categs = [];
-  List<ItemProdPopuWid> prodPopu = [];
-  List<ItemRecomWid> recomen = [];
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    categs.add(ItemCategsWid(
+  List<ItemCategsWid> categs = [
+    ItemCategsWid(
       assets: 'assets/images/tacos.png',
       color: ColorsH.verdeCat,
       name: 'Tacos',
-    ));
-    categs.add(ItemCategsWid(
+    ),
+    ItemCategsWid(
       assets: 'assets/images/frias.png',
       color: ColorsH.celesteCat,
       name: 'Frías',
-    ));
-    categs.add(ItemCategsWid(
+    ),
+    ItemCategsWid(
       assets: 'assets/images/burger.png',
       color: ColorsH.naranjaCat,
       name: 'Burger',
-    ));
-    categs.add(ItemCategsWid(
+    ),
+    ItemCategsWid(
       assets: 'assets/images/pizzas.png',
       color: ColorsH.rosaCat,
       name: 'Pizza',
-    ));
-    categs.add(ItemCategsWid(
+    ),
+    ItemCategsWid(
       assets: 'assets/images/burritos.png',
       color: ColorsH.moradoCat,
       name: 'Burritos',
-    ));
-    prodPopu.add(ItemProdPopuWid(
+    )
+  ];
+  List<ItemProdPopuWid> prodPopu = [
+    ItemProdPopuWid(
         icon: IconsH.nofavorite,
         available: ColorsH.inact,
         asset: 'assets/images/pizzaClas.png',
         title: 'Pizza Clásica',
         description: 'Salsa clásica de la casa',
-        price: 12.58));
-    prodPopu.add(ItemProdPopuWid(
+        price: 12.58),
+    ItemProdPopuWid(
         icon: IconsH.favorite,
         available: ColorsH.rosa,
         asset: 'assets/images/hambMix.png',
         title: 'Hamburguesa mix',
         description: 'Doble carne con queso',
-        price: 12.58));
-    prodPopu.add(ItemProdPopuWid(
+        price: 12.58),
+    ItemProdPopuWid(
         icon: IconsH.nofavorite,
         available: ColorsH.inact,
         asset: 'assets/images/pizzaClas.png',
         title: 'Pizza Clásica',
         description: 'Salsa clásica de la casa',
-        price: 12.58));
-    recomen.add(ItemRecomWid(
+        price: 12.58)
+  ];
+  List<ItemRecomWid> recomen = [
+    ItemRecomWid(
         icon: IconsH.favorite,
         available: ColorsH.rosa,
         asset: 'assets/images/malteada1.png',
         categ: 'Naturales',
         title: 'Malteadas tropicales',
         descr: 'Elaborado con jugos naturales',
-        price: 12.58));
-    recomen.add(ItemRecomWid(
+        price: 12.58),
+    ItemRecomWid(
         icon: IconsH.favorite,
         available: ColorsH.rosa,
         asset: 'assets/images/malteada2.png',
         categ: 'Naturales',
         title: 'Malteadas tropicales',
         descr: 'Salsa clásica de la casa',
-        price: 20.58));
+        price: 20.58),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: ColorsH.bg,
       body: Column(
