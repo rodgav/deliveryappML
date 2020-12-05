@@ -13,7 +13,7 @@ class BottomBarWidget extends StatelessWidget {
       height: 70,
       decoration: BoxDecoration(
           color: ColorsH.white, borderRadius: BorderRadius.circular(20)),
-      margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      margin: EdgeInsets.only(bottom: 20, left: 20,right: 20),
       padding: EdgeInsets.all(10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

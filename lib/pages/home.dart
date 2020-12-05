@@ -2,14 +2,83 @@ import 'package:deliveryapp1mauriciolopez/helpers/colors.dart';
 import 'package:deliveryapp1mauriciolopez/helpers/icons.dart';
 import 'package:deliveryapp1mauriciolopez/widgets/appBar.dart';
 import 'package:deliveryapp1mauriciolopez/widgets/bottonBar.dart';
+import 'package:deliveryapp1mauriciolopez/widgets/itemCategs.dart';
+import 'package:deliveryapp1mauriciolopez/widgets/itemProdPopu.dart';
+import 'package:deliveryapp1mauriciolopez/widgets/itemRecom.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatelessWidget {
+  List<ItemCategsWid> categs = [];
+  List<ItemProdPopuWid> prodPopu = [];
+  List<ItemRecomWid> recomen = [];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    categs.add(ItemCategsWid(
+      assets: 'assets/images/tacos.png',
+      color: ColorsH.verdeCat,
+      name: 'Tacos',
+    ));
+    categs.add(ItemCategsWid(
+      assets: 'assets/images/frias.png',
+      color: ColorsH.celesteCat,
+      name: 'Frías',
+    ));
+    categs.add(ItemCategsWid(
+      assets: 'assets/images/burger.png',
+      color: ColorsH.naranjaCat,
+      name: 'Burger',
+    ));
+    categs.add(ItemCategsWid(
+      assets: 'assets/images/pizzas.png',
+      color: ColorsH.rosaCat,
+      name: 'Pizza',
+    ));
+    categs.add(ItemCategsWid(
+      assets: 'assets/images/burritos.png',
+      color: ColorsH.moradoCat,
+      name: 'Burritos',
+    ));
+    prodPopu.add(ItemProdPopuWid(
+        icon: IconsH.nofavorite,
+        available: ColorsH.inact,
+        asset: 'assets/images/pizzaClas.png',
+        title: 'Pizza Clásica',
+        description: 'Salsa clásica de la casa',
+        price: 12.58));
+    prodPopu.add(ItemProdPopuWid(
+        icon: IconsH.favorite,
+        available: ColorsH.rosa,
+        asset: 'assets/images/hambMix.png',
+        title: 'Hamburguesa mix',
+        description: 'Doble carne con queso',
+        price: 12.58));
+    prodPopu.add(ItemProdPopuWid(
+        icon: IconsH.nofavorite,
+        available: ColorsH.inact,
+        asset: 'assets/images/pizzaClas.png',
+        title: 'Pizza Clásica',
+        description: 'Salsa clásica de la casa',
+        price: 12.58));
+    recomen.add(ItemRecomWid(
+        icon: IconsH.favorite,
+        available: ColorsH.rosa,
+        asset: 'assets/images/malteada1.png',
+        categ: 'Naturales',
+        title: 'Malteadas tropicales',
+        descr: 'Elaborado con jugos naturales',
+        price: 12.58));
+    recomen.add(ItemRecomWid(
+        icon: IconsH.favorite,
+        available: ColorsH.rosa,
+        asset: 'assets/images/malteada2.png',
+        categ: 'Naturales',
+        title: 'Malteadas tropicales',
+        descr: 'Salsa clásica de la casa',
+        price: 20.58));
     return Scaffold(
       backgroundColor: ColorsH.bg,
       body: Column(
@@ -19,6 +88,7 @@ class HomePage extends StatelessWidget {
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     margin: EdgeInsets.only(
@@ -41,123 +111,48 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 105,
-                    margin:
-                        EdgeInsets.only(top: 0, left: 0, right: 0, bottom: 10),
-                    padding: EdgeInsets.all(5),
+                    height: 94,
                     child: ListView(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       physics: BouncingScrollPhysics(),
-                      children: [
-                        Container(
-                          width: 100,
-                          height: 100,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Container(
-                                width: 70,
-                                height: 70,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color: ColorsH.verde1),
-                                child: ,
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text('Tacos')
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: 100,
-                          height: 100,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Container(
-                                width: 70,
-                                height: 70,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color: ColorsH.verde1),
-                                child: Icon(IconsH.favorite),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text('Tacos')
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: 100,
-                          height: 100,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Container(
-                                width: 70,
-                                height: 70,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color: ColorsH.verde1),
-                                child: Icon(IconsH.favorite),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text('Tacos')
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: 100,
-                          height: 100,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Container(
-                                width: 70,
-                                height: 70,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color: ColorsH.verde1),
-                                child: Icon(IconsH.favorite),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text('Tacos')
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: 100,
-                          height: 100,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Container(
-                                width: 70,
-                                height: 70,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color: ColorsH.verde1),
-                                child: Icon(IconsH.favorite),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text('Tacos')
-                            ],
-                          ),
-                        ),
-                      ],
+                      children: categs,
                     ),
-                  )
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: 25, left: 25, right: 25, bottom: 10),
+                    child: Text(
+                      'Productos populares',
+                      style: TextStyle(color: ColorsH.text, fontSize: 18),
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                  Container(
+                    height: 230,
+                    child: ListView(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        physics: BouncingScrollPhysics(),
+                        children: prodPopu),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: 25, left: 25, right: 25, bottom: 10),
+                    child: Text(
+                      'Recomendados',
+                      style: TextStyle(color: ColorsH.text, fontSize: 18),
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                  Container(
+                    height: 160,
+                    child: ListView(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        physics: BouncingScrollPhysics(),
+                        children: recomen),
+                  ),
                 ],
               ),
             ),
