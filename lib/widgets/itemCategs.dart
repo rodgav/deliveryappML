@@ -11,7 +11,8 @@ class ItemCategsWid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(margin: EdgeInsets.only(left: 15),
+    return Container(
+      margin: EdgeInsets.only(left: 15),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

@@ -8,6 +8,7 @@ class ItemProdPopuWid extends StatelessWidget {
   String title;
   String description;
   double price;
+  Function(BuildContext) moveRute;
 
   ItemProdPopuWid(
       {@required this.icon,
@@ -15,7 +16,8 @@ class ItemProdPopuWid extends StatelessWidget {
       @required this.asset,
       @required this.title,
       @required this.description,
-      @required this.price});
+      @required this.price,
+      @required this.moveRute});
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +40,8 @@ class ItemProdPopuWid extends StatelessWidget {
           Center(
             child: Image.asset(
               asset,
-              width: 150,
-              height: 150,
+              width: 145,
+              height: 145,
               fit: BoxFit.fill,
             ),
           ),
@@ -73,25 +75,30 @@ class ItemProdPopuWid extends StatelessWidget {
               Expanded(
                 child: Container(),
               ),
-              Container(
-                height: 29,
-                width: 29,
-                decoration: BoxDecoration(
-                  color: ColorsH.white,
-                  borderRadius: BorderRadius.circular(100),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0.0, 0.0), //(x,y)
-                      blurRadius: 1.0,
-                    ),
-                  ],
+              GestureDetector(
+                child: Container(
+                  height: 29,
+                  width: 29,
+                  decoration: BoxDecoration(
+                    color: ColorsH.white,
+                    borderRadius: BorderRadius.circular(100),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(0.0, 0.0), //(x,y)
+                        blurRadius: 1.0,
+                      ),
+                    ],
+                  ),
+                  child: Icon(
+                    Icons.arrow_forward_ios_sharp,
+                    size: 10,
+                    color: ColorsH.text,
+                  ),
                 ),
-                child: Icon(
-                  Icons.arrow_forward_ios_sharp,
-                  size: 10,
-                  color: ColorsH.text,
-                ),
+                onTap: () {
+                  moveRute(context);
+                },
               )
             ],
           )

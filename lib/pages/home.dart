@@ -9,75 +9,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class HomePage extends StatelessWidget {
-  List<ItemCategsWid> categs = [
-    ItemCategsWid(
-      assets: 'assets/images/tacos.png',
-      color: ColorsH.verdeCat,
-      name: 'Tacos',
-    ),
-    ItemCategsWid(
-      assets: 'assets/images/frias.png',
-      color: ColorsH.celesteCat,
-      name: 'Frías',
-    ),
-    ItemCategsWid(
-      assets: 'assets/images/burger.png',
-      color: ColorsH.naranjaCat,
-      name: 'Burger',
-    ),
-    ItemCategsWid(
-      assets: 'assets/images/pizzas.png',
-      color: ColorsH.rosaCat,
-      name: 'Pizza',
-    ),
-    ItemCategsWid(
-      assets: 'assets/images/burritos.png',
-      color: ColorsH.moradoCat,
-      name: 'Burritos',
-    )
-  ];
-  List<ItemProdPopuWid> prodPopu = [
-    ItemProdPopuWid(
-        icon: IconsH.nofavorite,
-        available: ColorsH.inact,
-        asset: 'assets/images/pizzaClas.png',
-        title: 'Pizza Clásica',
-        description: 'Salsa clásica de la casa',
-        price: 12.58),
-    ItemProdPopuWid(
-        icon: IconsH.favorite,
-        available: ColorsH.rosa,
-        asset: 'assets/images/hambMix.png',
-        title: 'Hamburguesa mix',
-        description: 'Doble carne con queso',
-        price: 12.58),
-    ItemProdPopuWid(
-        icon: IconsH.nofavorite,
-        available: ColorsH.inact,
-        asset: 'assets/images/pizzaClas.png',
-        title: 'Pizza Clásica',
-        description: 'Salsa clásica de la casa',
-        price: 12.58)
-  ];
-  List<ItemRecomWid> recomen = [
-    ItemRecomWid(
-        icon: IconsH.favorite,
-        available: ColorsH.rosa,
-        asset: 'assets/images/malteada1.png',
-        categ: 'Naturales',
-        title: 'Malteadas tropicales',
-        descr: 'Elaborado con jugos naturales',
-        price: 12.58),
-    ItemRecomWid(
-        icon: IconsH.favorite,
-        available: ColorsH.rosa,
-        asset: 'assets/images/malteada2.png',
-        categ: 'Naturales',
-        title: 'Malteadas tropicales',
-        descr: 'Salsa clásica de la casa',
-        price: 20.58),
-  ];
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List<ItemCategsWid> categs = [];
+  List<ItemProdPopuWid> prodPopu = [];
+  List<ItemRecomWid> recomen = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _addCategs();
+    _addPopuls();
+    _addRecoms();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -164,5 +113,88 @@ class HomePage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  moveRute(BuildContext context) {
+    Navigator.of(context).pushNamed('/detail');
+  }
+
+  _addCategs() {
+    categs.add(ItemCategsWid(
+        assets: 'assets/images/tacos.png',
+        color: ColorsH.verdeCat,
+        name: 'Tacos'));
+    categs.add(ItemCategsWid(
+        assets: 'assets/images/frias.png',
+        color: ColorsH.celesteCat,
+        name: 'Frías'));
+    categs.add(ItemCategsWid(
+        assets: 'assets/images/burger.png',
+        color: ColorsH.naranjaCat,
+        name: 'Burger'));
+    categs.add(ItemCategsWid(
+        assets: 'assets/images/pizzas.png',
+        color: ColorsH.rosaCat,
+        name: 'Pizza'));
+    categs.add(ItemCategsWid(
+        assets: 'assets/images/burritos.png',
+        color: ColorsH.moradoCat,
+        name: 'Burritos'));
+    setState(() {});
+  }
+
+  _addPopuls() {
+    prodPopu.add(ItemProdPopuWid(
+      icon: IconsH.nofavorite,
+      available: ColorsH.inact,
+      asset: 'assets/images/pizzaClas.png',
+      title: 'Pizza Clásica',
+      description: 'Salsa clásica de la casa',
+      price: 12.58,
+      moveRute: moveRute,
+    ));
+    prodPopu.add(ItemProdPopuWid(
+      icon: IconsH.favorite,
+      available: ColorsH.rosa,
+      asset: 'assets/images/hambMix.png',
+      title: 'Hamburguesa mix',
+      description: 'Doble carne con queso',
+      price: 12.58,
+      moveRute: moveRute,
+    ));
+    prodPopu.add(ItemProdPopuWid(
+      icon: IconsH.nofavorite,
+      available: ColorsH.inact,
+      asset: 'assets/images/pizzaClas.png',
+      title: 'Pizza Clásica',
+      description: 'Salsa clásica de la casa',
+      price: 12.58,
+      moveRute: moveRute,
+    ));
+    setState(() {});
+  }
+
+  _addRecoms() {
+    recomen.add(ItemRecomWid(
+      icon: IconsH.favorite,
+      available: ColorsH.rosa,
+      asset: 'assets/images/malteada1.png',
+      categ: 'Naturales',
+      title: 'Malteadas tropicales',
+      descr: 'Elaborado con jugos naturales',
+      price: 12.58,
+      moveRute: moveRute,
+    ));
+    recomen.add(ItemRecomWid(
+      icon: IconsH.favorite,
+      available: ColorsH.rosa,
+      asset: 'assets/images/malteada2.png',
+      categ: 'Naturales',
+      title: 'Malteadas tropicales',
+      descr: 'Salsa clásica de la casa',
+      price: 20.58,
+      moveRute: moveRute,
+    ));
+    setState(() {});
   }
 }

@@ -9,7 +9,7 @@ class ItemRecomWid extends StatelessWidget {
   String title;
   String descr;
   double price;
-
+  Function(BuildContext) moveRute;
   ItemRecomWid(
       {@required this.icon,
       @required this.available,
@@ -17,7 +17,8 @@ class ItemRecomWid extends StatelessWidget {
       @required this.categ,
       @required this.title,
       @required this.descr,
-      @required this.price});
+      @required this.price,
+      @required this.moveRute});
 
   @override
   Widget build(BuildContext context) {
