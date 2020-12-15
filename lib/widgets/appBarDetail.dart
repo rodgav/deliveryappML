@@ -52,7 +52,7 @@ class AppBarDetailWid extends SliverPersistentHeaderDelegate {
           )),
         ),
         Positioned(
-          top: (expandedHeight - shrinkOffset) - 55,
+          top: (expandedHeight - shrinkOffset) - 30,
           left: MediaQuery.of(context).size.width - 100,
           child: Opacity(
             opacity: (1 - shrinkOffset / expandedHeight),
@@ -103,7 +103,8 @@ class _Painter extends CustomPainter {
     path.quadraticBezierTo(
         size.width, size.height * 0.8 + 50, size.width, size.height * 0.5 + 50);
     path.lineTo(size.width, 0);
-    canvas.drawPath(path, paint);
+    //canvas.drawPath(path, paint);
+    if(image!=null)
     canvas.drawPath(
         path,
         Paint()

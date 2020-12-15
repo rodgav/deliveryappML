@@ -1,4 +1,5 @@
 import 'package:deliveryapp1mauriciolopez/helpers/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ItemRecomWid extends StatelessWidget {
@@ -22,10 +23,10 @@ class ItemRecomWid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(left: 15),
-      width: 260,
-      height: 160,
+      width: size.width*0.7,
       child: Stack(
         children: [
           Container(

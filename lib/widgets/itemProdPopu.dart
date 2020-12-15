@@ -21,9 +21,9 @@ class ItemProdPopuWid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      width: 174,
-      height: 230,
+      width: size.width * 0.45,
       decoration: BoxDecoration(
           color: ColorsH.white, borderRadius: BorderRadius.circular(10)),
       padding: EdgeInsets.symmetric(vertical: 7, horizontal: 15),

@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    height: 94,
+                    height: size.height * 0.16,
                     child: ListView(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    height: 230,
+                    height: size.height * 0.4,
                     child: ListView(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    height: 160,
+                    height: size.height * 0.3,
                     child: ListView(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,

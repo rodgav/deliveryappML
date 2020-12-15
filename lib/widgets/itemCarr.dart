@@ -21,13 +21,11 @@ class ItemCarrWid extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width * 0.55,
-      height: size.height * 0.3,
       margin: EdgeInsets.only(left: 15.0),
       child: Stack(
         children: [
           Container(
             width: size.width * 0.55,
-            height: size.height * 0.3,
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rsgmsolutions.deliveryapp1mauriciolopez">
    <application
-        android:label="deliveryapp1mauriciolopez"
+        android:label="deliveryapp1ML"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

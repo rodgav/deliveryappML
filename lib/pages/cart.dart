@@ -53,7 +53,7 @@ class CartPage extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                margin: EdgeInsets.symmetric(vertical: 20, horizontal: 0),
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
                 child: SingleChildScrollView(
                   physics: BouncingScrollPhysics(),
                   child: Column(
@@ -93,7 +93,7 @@ class CartPage extends StatelessWidget {
                       ),
                       Container(
                         width: size.width,
-                        height: size.height * 0.3,
+                        height: size.height * 0.4,
                         margin: EdgeInsets.only(
                           top: 25,
                         ),
@@ -106,9 +106,9 @@ class CartPage extends StatelessWidget {
                       ),
                       Container(
                         width: size.width,
-                        height: size.height * 0.22,
+                        height: size.height * 0.25,
                         margin: EdgeInsets.all(
-                          20,
+                          10,
                         ),
                         decoration: BoxDecoration(
                             color: ColorsH.GREY1,
@@ -180,7 +180,7 @@ class CartPage extends StatelessWidget {
                             ),
                             ButtonWid(
                                 width: size.width,
-                                height: 63.0,
+                                height:size.height * 0.1,
                                 text: 'Realizar compra')
                           ],
                         ),
