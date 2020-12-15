@@ -37,79 +37,90 @@ class _HomePageState extends State<HomePage> {
         children: [
           AppBarWidget(size: size),
           Expanded(
-            child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: 25, left: 25, right: 25, bottom: 10),
-                    child: Row(
-                      children: [
-                        Text(
-                          'Explorar categorias',
+            child: Stack(
+              children: [
+                SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: 25, left: 25, right: 25, bottom: 10),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Explorar categorias',
+                              style:
+                                  TextStyle(color: ColorsH.text, fontSize: 18),
+                            ),
+                            Expanded(
+                              child: Container(),
+                            ),
+                            Text(
+                              'Ver todos',
+                              style: TextStyle(
+                                  color: ColorsH.textGrey, fontSize: 16),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 94,
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          physics: BouncingScrollPhysics(),
+                          children: categs,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: 25, left: 25, right: 25, bottom: 10),
+                        child: Text(
+                          'Productos populares',
                           style: TextStyle(color: ColorsH.text, fontSize: 18),
+                          textAlign: TextAlign.start,
                         ),
-                        Expanded(
-                          child: Container(),
+                      ),
+                      Container(
+                        height: 230,
+                        child: ListView(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            physics: BouncingScrollPhysics(),
+                            children: prodPopu),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: 25, left: 25, right: 25, bottom: 10),
+                        child: Text(
+                          'Recomendados',
+                          style: TextStyle(color: ColorsH.text, fontSize: 18),
+                          textAlign: TextAlign.start,
                         ),
-                        Text(
-                          'Ver todos',
-                          style:
-                              TextStyle(color: ColorsH.textGrey, fontSize: 16),
-                        )
-                      ],
-                    ),
+                      ),
+                      Container(
+                        height: 160,
+                        margin: EdgeInsets.only(bottom: 90),
+                        child: ListView(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            physics: BouncingScrollPhysics(),
+                            children: recomen),
+                      ),
+                    ],
                   ),
-                  Container(
-                    height: size.height * 0.16,
-                    child: ListView(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      physics: BouncingScrollPhysics(),
-                      children: categs,
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: 25, left: 25, right: 25, bottom: 10),
-                    child: Text(
-                      'Productos populares',
-                      style: TextStyle(color: ColorsH.text, fontSize: 18),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  Container(
-                    height: size.height * 0.4,
-                    child: ListView(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        physics: BouncingScrollPhysics(),
-                        children: prodPopu),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: 25, left: 25, right: 25, bottom: 10),
-                    child: Text(
-                      'Recomendados',
-                      style: TextStyle(color: ColorsH.text, fontSize: 18),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  Container(
-                    height: size.height * 0.3,
-                    child: ListView(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        physics: BouncingScrollPhysics(),
-                        children: recomen),
-                  ),
-                ],
-              ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: BottomBarWidget(size: size),
+                )
+              ],
             ),
-          ),
-          BottomBarWidget(size: size),
+          )
         ],
       ),
     );

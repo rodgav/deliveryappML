@@ -52,145 +52,151 @@ class CartPage extends StatelessWidget {
         body: Column(
           children: [
             Expanded(
-              child: Container(
-                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
-                child: SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 20),
-                        child: Row(
-                          children: [
-                            Container(
-                              width: size.width * 0.79,
-                              height: size.width * 0.12,
-                              child: ListView(
-                                shrinkWrap: true,
-                                physics: BouncingScrollPhysics(),
-                                scrollDirection: Axis.horizontal,
-                                children: ubics,
+              child: Stack(
+                children: [
+                  SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 10),
+                          padding: EdgeInsets.only(left: 20),
+                          child: Row(
+                            children: [
+                              Container(
+                                width: size.width * 0.79,
+                                height: 50,
+                                child: ListView(
+                                  shrinkWrap: true,
+                                  physics: BouncingScrollPhysics(),
+                                  scrollDirection: Axis.horizontal,
+                                  children: ubics,
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ),
-                            Container(
-                              width: size.width * 0.12,
-                              height: size.width * 0.12,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: ColorsH.morado),
-                              child: Icon(
-                                Icons.add,
-                                color: ColorsH.white,
+                              SizedBox(
+                                width: 10.0,
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: size.width,
-                        height: size.height * 0.4,
-                        margin: EdgeInsets.only(
-                          top: 25,
-                        ),
-                        child: ListView(
-                          shrinkWrap: true,
-                          physics: BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          children: carritos,
-                        ),
-                      ),
-                      Container(
-                        width: size.width,
-                        height: size.height * 0.25,
-                        margin: EdgeInsets.all(
-                          10,
-                        ),
-                        decoration: BoxDecoration(
-                            color: ColorsH.GREY1,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Column(
-                          children: [
-                            Container(
-                              margin:
-                                  EdgeInsets.only(top: 30, right: 20, left: 20),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'SubTotal:',
-                                    style: TextStyle(
-                                        color: ColorsH.text, fontSize: 11),
-                                  ),
-                                  Text(
-                                    '\$85.00 USD',
-                                    style: TextStyle(
-                                        color: ColorsH.text, fontSize: 11),
-                                  ),
-                                ],
+                              Container(
+                                width: size.width * 0.12,
+                                height: size.width * 0.12,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(100),
+                                    color: ColorsH.morado),
+                                child: Icon(
+                                  Icons.add,
+                                  color: ColorsH.white,
+                                ),
                               ),
-                            ),
-                            Container(
-                              margin:
-                                  EdgeInsets.only(top: 5, right: 20, left: 20),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Envio:',
-                                    style: TextStyle(
-                                        color: ColorsH.text, fontSize: 11),
-                                  ),
-                                  Text(
-                                    'Gratis',
-                                    style: TextStyle(
-                                        color: ColorsH.text, fontSize: 11),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin:
-                                  EdgeInsets.only(top: 5, right: 25, left: 25),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Total:',
-                                    style: TextStyle(
-                                        color: ColorsH.morado, fontSize: 17),
-                                  ),
-                                  Text(
-                                    '\$85.00 USD',
-                                    style: TextStyle(
-                                        color: ColorsH.morado, fontSize: 17),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(),
-                            ),
-                            ButtonWid(
-                                width: size.width,
-                                height:size.height * 0.1,
-                                text: 'Realizar compra')
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                        Container(
+                          width: size.width,
+                          height: 250,
+                          margin: EdgeInsets.only(
+                            top: 25,
+                          ),
+                          child: ListView(
+                            shrinkWrap: true,
+                            physics: BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            children: carritos,
+                          ),
+                        ),
+                        Container(
+                          width: size.width,
+                          height: 200,
+                          margin: EdgeInsets.only(
+                              top: 10, left: 10, right: 10, bottom: 95),
+                          decoration: BoxDecoration(
+                              color: ColorsH.GREY1,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(
+                                    top: 30, right: 20, left: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'SubTotal:',
+                                      style: TextStyle(
+                                          color: ColorsH.text, fontSize: 11),
+                                    ),
+                                    Text(
+                                      '\$85.00 USD',
+                                      style: TextStyle(
+                                          color: ColorsH.text, fontSize: 11),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(
+                                    top: 5, right: 20, left: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Envio:',
+                                      style: TextStyle(
+                                          color: ColorsH.text, fontSize: 11),
+                                    ),
+                                    Text(
+                                      'Gratis',
+                                      style: TextStyle(
+                                          color: ColorsH.text, fontSize: 11),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(
+                                    top: 5, right: 25, left: 25),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Total:',
+                                      style: TextStyle(
+                                          color: ColorsH.morado, fontSize: 17),
+                                    ),
+                                    Text(
+                                      '\$85.00 USD',
+                                      style: TextStyle(
+                                          color: ColorsH.morado, fontSize: 17),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(),
+                              ),
+                              ButtonWid(
+                                  width: size.width,
+                                  height: 70,
+                                  text: 'Realizar compra')
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
+                  Positioned(
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    child: BottomBarWidget(size: size),
+                  )
+                ],
               ),
             ),
-            BottomBarWidget(size: size)
           ],
         ));
   }
